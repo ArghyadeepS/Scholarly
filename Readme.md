@@ -1,5 +1,7 @@
-# Scholarly (Project Documentation)
-Simplifying Academic and Exam Literacy with Multilingual AI
+# (Project Documentation)
+# Project Title & Tagline
+Fork Experts — Scholarly
+A multilingual, Minecraft-themed AI assistant that simplifies academic documents, forms, and rules for every student.
 
 ---
 
