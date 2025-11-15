@@ -1,7 +1,8 @@
-# (Project Documentation)
-# Project Title & Tagline
-Fork Experts — Scholarly
-A multilingual, Minecraft-themed AI assistant that simplifies academic documents, forms, and rules for every student.
+# Project Documentation
+
+## Project Title & Tagline
+### **Fork Experts — Scholarly**
+*A multilingual, Minecraft-themed AI assistant that simplifies academic documents, forms, and rules for every student.*
 
 ---
 
