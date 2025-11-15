@@ -3,7 +3,7 @@ Simplifying Academic and Exam Literacy with Multilingual AI
 
 ---
 
-## Executive Summary
+## Summary
 Scholarly is an AI-powered academic assistant built to simplify complex academic processes for students across India. Using multilingual NLP, OCR processing, and guided workflows, Scholarly converts confusing academic documents and rules into clear, actionable information in multiple Indian languages.
 
 ---
