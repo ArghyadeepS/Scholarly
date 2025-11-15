@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MessageSquare, ScanText, Route } from "lucide-react";
+import { MessageSquare, ScanText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { MinecraftHeading } from "@/components/MinecraftHeading";
 
@@ -19,13 +19,6 @@ const Dashboard = () => {
       icon: ScanText,
       link: "/app/ocr",
       color: "text-secondary"
-    },
-    {
-      title: "Start a Workflow",
-      description: "Follow step-by-step procedures",
-      icon: Route,
-      link: "/app/workflows",
-      color: "text-accent"
     }
   ];
 

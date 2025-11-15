@@ -130,7 +130,7 @@ const Chat = () => {
     setInput(prompt);
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleInputChange = (e: any) => {
     const text = e.target.value;
     if (text.length <= MAX_PROMPT_LENGTH) {
       setInput(text);
@@ -138,7 +138,7 @@ const Chat = () => {
   };
 
   const parseMarkdown = (text: string) => {
-    const elements: (string | JSX.Element)[] = [];
+    const elements: any[] = [];
     let lastIndex = 0;
 
     const regex = /\*\*(.+?)\*\*|\*(.+?)\*|`(.+?)`|~~(.+?)~~/g;

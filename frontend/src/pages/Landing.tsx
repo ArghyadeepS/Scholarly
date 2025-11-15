@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { MessageSquare, ScanText, Route, BookOpen, Github, LogOut, User, LayoutDashboard } from "lucide-react";
+import { MessageSquare, ScanText, BookOpen, Github, LogOut, User, LayoutDashboard } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { MinecraftHeading } from "@/components/MinecraftHeading";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -57,11 +57,6 @@ const Landing = () => {
       icon: ScanText,
       title: "OCR Document Intelligence",
       description: "Upload forms and get instant text extraction with field detection."
-    },
-    {
-      icon: Route,
-      title: "Guided Workflows",
-      description: "Step-by-step procedures for exams, scholarships, and admissions."
     },
     {
       icon: BookOpen,
