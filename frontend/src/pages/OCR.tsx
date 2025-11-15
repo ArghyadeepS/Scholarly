@@ -156,12 +156,12 @@ const OCR = () => {
     const message = `Explain the file data below\n\n${extractedData[currentPage]}`;
 
     try {
-      const response = await fetch(`${localApiUrl}explain/${language}`, {
+      const response = await fetch(`${localApiUrl}explain`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message, language }),
       });
 
       if (!response.ok) {
@@ -208,16 +208,16 @@ const OCR = () => {
     const allData = Object.values(extractedData).join("\n\n");
     const message = `summarize the full data below and explain in short\n\n${allData}`;
     
-    console.log("Summarize endpoint URL:", `${localApiUrl}explain/${language}`);
-    console.log("Request payload:", { message });
+    console.log("Summarize endpoint URL:", `${localApiUrl}explain`);
+    console.log("Request payload:", { message, language });
 
     try {
-      const response = await fetch(`${localApiUrl}explain/${language}`, {
+      const response = await fetch(`${localApiUrl}explain`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message, language }),
       });
 
       if (!response.ok) {
