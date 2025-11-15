@@ -100,7 +100,7 @@ def google_callback():
     conn.commit()
     conn.close()
     session_id = create_session(google_id)
-    resp = make_response(redirect("https://test.kingmon.xyz/app"))
+    resp = make_response(redirect("https://scholarly.kingmon.xyz/app"))
     resp.set_cookie(
         "session_id",
         session_id,

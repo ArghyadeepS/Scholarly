@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
     host: "0.0.0.0",
     port: 6085,
     allowedHosts: [
-      "scolarly.kingmon.xyz",
+      "scholarly.kingmon.xyz",
     ],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
