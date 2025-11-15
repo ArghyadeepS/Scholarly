@@ -7,106 +7,106 @@
 ---
 
 # What is the problem?
-Students face confusion and frustration when dealing with academic forms, exam procedures, scholarship PDFs, and institutional notices because everything is written in complex, formal English.
-This causes:
 
-mistakes in form submissions
+Students often struggle with academic documents — forms, exam procedures, scholarship PDFs, and official notices — because they are written in complex, formal English. This results in:
 
-missed deadlines & lost opportunities
+- Mistakes in form submissions  
+- Missed deadlines and lost opportunities  
+- Repeated visits to administrative offices  
+- Added difficulty for non-English-medium and first-generation learners
 
-repeated visits to administrative offices
-
-extra difficulty for non-English-medium and first-generation learners
 ---
 
 # What Problem Does Scholarly Actually Solve?
-Students struggle to understand academic rules, deadlines, forms, and procedures because everything is written in overly formal English. This causes confusion, errors, missed opportunities, and frequent visits to administrative offices.
 
-Scholarly increases academic clarity by:
-- Reading any academic document  
-- Extracting important details  
-- Simplifying complex language  
-- Explaining content in the user’s preferred language  
-- Providing step-by-step workflows for complicated processes  
+Scholarly acts as a bridge between academic documents and students. It:
 
-We have also built a document-simplification-as-a-service interface where users can upload any academic PDF, notice, or form and instantly receive a simplified, multilingual version.
+- Reads any uploaded notice, form, or PDF  
+- Extracts important information using OCR  
+- Simplifies the language into clear bullet points  
+- Explains everything in the user’s preferred language  
+- Provides step-by-step guidance for academic tasks  
+- Uses a Minecraft-inspired interface to make learning friendly and less intimidating  
 
-Scholarly acts as a middleman between academic documents and students, reducing confusion and enabling accurate, confident submissions.
-
----
-
-# Core Features
-
-## Multilingual Academic Q&A
-Students can ask any academic question in English, Hindi, Bengali, Odia, or mixed languages.
-- Covers exam rules, scholarship criteria, form-related doubts, deadlines, and general academic procedures.
-- Handles code-mixed queries (Hinglish, Benglish) and informal student phrasing.
-- Provides instant, accurate, and easy-to-understand responses in the chosen language.
-
-## OCR-Based Document Understanding
-Students can upload forms, notices, guidelines, or PDFs.
-- Extracts text using OCR and identifies key instructions, required documents, deadlines, and important fields.
-- Cleans noisy scans, tables, and stamps to improve accuracy.
-- Converts complex documents into simplified summaries and bullet-point explanations.
-
-## Step-by-Step Academic Guidance
-Scholarly provides clear, sequential guidance for complex tasks such as exam registration, re-evaluation, scholarships, backlog forms, and migration/TC processes.
-- Generates task-specific workflows.
-- Uses conditional logic (“If this → then do this”) for clarity.
-- Reduces errors and confusion during form submission.
-
-## Automated Document Simplification
-Transforms formal academic documents into plain language.
-- Removes jargon and redundant text.
-- Highlights what the student must do, by when, and why.
-- Generates examples wherever necessary.
-
-## Unified Academic Knowledge Base
-A centralized library of academic rules and commonly asked questions.
-- Organized into categories for easy navigation.
-- Provides concise reference cards for quick understanding.
-- Ensures consistency and reliability of information.
-
-## Language-First Interface
-Designed to support vernacular-medium learners.
-- One-click language switching.
-- Consistent tone and clarity across languages.
-- Useful for rural and first-generation students.
-
-## Context-Aware Conversation
-Maintains context during interactions.
-- Remembers recent queries.
-- Tracks uploaded document details.
-- Provides follow-up responses without repeating information.
-
-## Integratable System
-Can be embedded into:
-- College websites  
-- Student self-service kiosks  
-- ERP and academic portals  
-Using modular APIs for smooth institutional integration.
+We chose this problem because academic literacy is a hidden barrier — and solving it empowers lakhs of students instantly.
 
 ---
 
-# User Workflow
+## Core Features
 
-1. **Student initiates a query**  
-   The student asks a question related to exams, scholarships, or forms.
+- **Multilingual Q&A:** Answers academic questions in English, Hindi, Bengali, Odia, and mixed languages.  
+- **OCR Document Reading:** Upload PDFs/forms; extracts key info and simplifies it.  
+- **Step-by-Step Guidance:** Clear workflows for exams, scholarships, re-evaluation, backlog, TC/migration, etc.  
+- **Document Simplification:** Converts complex academic text into easy summaries with key actions.  
+- **Knowledge Base:** Centralized academic rules and FAQs.  
+- **Minecraft-Themed UI:** Pixel-styled, friendly, gamified interface.  
+- **Context-Aware Chat:** Remembers previous queries and document uploads.  
+- **Integratable APIs:** Works with college portals, ERPs, and kiosks.
 
-2. **AI chatbot interprets intent**  
-   Scholarly detects the meaning of the query, identifies the student's need, and responds in their chosen language.
 
-3. **Student uploads documents (if required)**  
-   For form-related queries, the student uploads the PDF or image. The AI analyzes the content using OCR.
+## Tech Stack
+- **NLP:** Transformer-based models  
+- **OCR:** Advanced text extraction  
+- **Frontend:** React + TailwindCSS  
+- **Backend:** Node.js / Python  
+- **Database:** Cloud-hosted KB  
+- **Deployment:** Cloud/containers  
+- **APIs:** Workflow & OCR APIs  
 
-4. **Student receives a simplified explanation**  
-   Scholarly converts the document or query response into a clear, simplified summary with examples.
+## Challenges We Ran Into
 
-5. **AI generates step-by-step instructions**  
-   Scholarly outlines exactly what the student must do next, including required documents, deadlines, and corrections.
+- **Handling low-quality or complex academic PDFs during OCR**  
+  Many notices had poor scans, tables, signatures, and mixed Bengali–English content, making extraction difficult.
 
-6. **Student follows a guided workflow**  
-   The student proceeds through a structured, tailored workflow to complete their task correctly and confidently.
+- **Maintaining accuracy while simplifying dense, formal text**  
+  We had to keep all rules, deadlines, and instructions intact while still making the output beginner-friendly.
+
+- **Designing a Minecraft-inspired UI that stays fun yet professional**  
+  Balancing a game-like aesthetic with academic seriousness required multiple iterations.
+
+- **Ensuring fast processing for large and multilingual documents**  
+  Heavy PDFs slowed down the pipeline, so we optimized OCR, caching, and text-processing workflows.
+
+
+## Bonus Challenges (From Our Mentor)
+
+- **Implementing chat history inside the assistant**  
+  *Maintaining conversation context across multiple queries.*
+
+- **Adding OCR language-switch in explanation & summary**  
+  *Users should be able to switch the output language instantly (English → Bengali → Hindi).*
+
+- **Building a plugin (like a Chrome extension)**  
+  *The assistant should work on external educational websites (WBJEE, JEE Main, college portals) and translate academic content into any chosen language for easier understanding.*
+
+### How We Solved the Bonus Challenges  
+*(Add your final implemented solutions here)*  
 
 ---
 
+## Future Steps
+
+- **Adaptive Learning Mode**  
+  The assistant analyzes a student’s previous queries and documents to personalize explanations, difficulty levels, and recommended actions.
+
+- **Auto-Structured Document Generation**  
+  Convert complex notices or rules into automatically generated, clean, student-friendly formats—summaries, checklists, timelines, or step-by-step workflows.
+
+- **Universal Academic Parser (UAP)**  
+  A single engine that can read any academic website or PDF structure—forms, notices, syllabi, regulations—and instantly reorganize it into understandable sections.
+
+- **Institution Connect API**  
+  Colleges and schools can integrate our API to automatically generate simplified versions of their notices in multiple languages for all students.
+
+---
+
+## Team Members
+
+- **Anish Chatterjee** — NLP & AI Integration  
+- **Arghyadeep Sen** — Frontend Developer & UI/UX (Minecraft-themed interface)  
+- **Subha Maji** —  Documentation, Testing, User Journey & Presentation  
+- **Pravanjan Roy** —  Backend, OCR Pipeline, API Development
+
+---
+
+**Built with love at EDU-A-THON 2.0 — 2025 ❤️**
