@@ -1,4 +1,4 @@
-# Scholarly  
+# Scholarly (Project Documentation)
 Simplifying Academic and Exam Literacy with Multilingual AI
 
 ---
