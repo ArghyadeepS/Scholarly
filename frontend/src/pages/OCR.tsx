@@ -4,10 +4,43 @@ import { Button } from "@/components/ui/button";
 import { FileText, Upload, Loader2, ChevronLeft, ChevronRight, Lightbulb, X } from "lucide-react";
 import { MinecraftHeading } from "@/components/MinecraftHeading";
 import { UploadDropzone } from "@/components/UploadDropzone";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface ExtractedData {
   [page: string]: string;
 }
+
+const INDIAN_LANGUAGES = [
+  "English",
+  "Assamese",
+  "Bengali",
+  "Bodo",
+  "Dogri",
+  "Gujarati",
+  "Hindi",
+  "Kannada",
+  "Kashmiri",
+  "Konkani",
+  "Maithili",
+  "Malayalam",
+  "Manipuri (Meitei)",
+  "Marathi",
+  "Nepali",
+  "Odia",
+  "Punjabi",
+  "Sanskrit",
+  "Santhali",
+  "Sindhi",
+  "Tamil",
+  "Telugu",
+  "Urdu"
+];
 
 const OCR = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -21,6 +54,9 @@ const OCR = () => {
   const [popupDisplayedContent, setPopupDisplayedContent] = useState("");
   const [isPopupTyping, setIsPopupTyping] = useState(false);
   const [isExplaining, setIsExplaining] = useState(false);
+  const [showLanguageDialog, setShowLanguageDialog] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("English");
+  const [pendingAction, setPendingAction] = useState<"explain" | "summarize" | null>(null);
 
   useEffect(() => {
     const loadConfig = async () => {
@@ -106,6 +142,11 @@ const OCR = () => {
   };
 
   const handleExplain = async () => {
+    setPendingAction("explain");
+    setShowLanguageDialog(true);
+  };
+
+  const executeExplain = async (language: string) => {
     if (!localApiUrl) {
       setError("API URL not loaded.");
       return;
@@ -115,7 +156,7 @@ const OCR = () => {
     const message = `Explain the file data below\n\n${extractedData[currentPage]}`;
 
     try {
-      const response = await fetch(`${localApiUrl}explain`, {
+      const response = await fetch(`${localApiUrl}explain/${language}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -153,6 +194,11 @@ const OCR = () => {
   };
 
   const handleSummarize = async () => {
+    setPendingAction("summarize");
+    setShowLanguageDialog(true);
+  };
+
+  const executeSummarize = async (language: string) => {
     if (!localApiUrl) {
       setError("API URL not loaded.");
       return;
@@ -162,11 +208,11 @@ const OCR = () => {
     const allData = Object.values(extractedData).join("\n\n");
     const message = `summarize the full data below and explain in short\n\n${allData}`;
     
-    console.log("Summarize endpoint URL:", `${localApiUrl}explain`);
+    console.log("Summarize endpoint URL:", `${localApiUrl}explain/${language}`);
     console.log("Request payload:", { message });
 
     try {
-      const response = await fetch(`${localApiUrl}explain`, {
+      const response = await fetch(`${localApiUrl}explain/${language}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -411,6 +457,59 @@ const OCR = () => {
           </Card>
         </div>
       )}
+
+      {/* Language Selection Dialog */}
+      <Dialog open={showLanguageDialog} onOpenChange={setShowLanguageDialog}>
+        <DialogContent className="max-w-md">
+          <DialogHeader>
+            <DialogTitle>Select Language</DialogTitle>
+            <DialogDescription>
+              Choose the language for the response
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid grid-cols-2 gap-2 max-h-96 overflow-y-auto py-4">
+            {INDIAN_LANGUAGES.map((language) => (
+              <Button
+                key={language}
+                variant={selectedLanguage === language ? "default" : "outline"}
+                className="justify-start"
+                onClick={() => setSelectedLanguage(language)}
+              >
+                {language}
+              </Button>
+            ))}
+          </div>
+          <div className="flex gap-2 justify-end pt-4">
+            <Button
+              variant="outline"
+              onClick={() => setShowLanguageDialog(false)}
+            >
+              Cancel
+            </Button>
+            <Button
+              onClick={async () => {
+                setShowLanguageDialog(false);
+                if (pendingAction === "explain") {
+                  await executeExplain(selectedLanguage);
+                } else if (pendingAction === "summarize") {
+                  await executeSummarize(selectedLanguage);
+                }
+                setPendingAction(null);
+              }}
+              disabled={isExplaining}
+            >
+              {isExplaining ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Processing...
+                </>
+              ) : (
+                "Confirm"
+              )}
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
