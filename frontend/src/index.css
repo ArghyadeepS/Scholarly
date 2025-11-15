@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 25% 97%;
+    --foreground: 215 25% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+    --primary: 108 52% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 102 45% 56%;
+    --secondary-foreground: 215 25% 12%;
+    --muted: 220 15% 94%;
+    --muted-foreground: 215 15% 45%;
+    --accent: 28 50% 38%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 108 52% 35%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 215 25% 25%;
+    --sidebar-primary: 108 52% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 94%;
+    --sidebar-accent-foreground: 215 25% 25%;
+    --sidebar-border: 220 15% 91%;
+    --sidebar-ring: 108 52% 35%;
+  }
+
+  .dark {
+    --background: 216 28% 7%;
+    --foreground: 220 20% 95%;
+    --card: 216 25% 10%;
+    --card-foreground: 220 20% 95%;
+    --popover: 216 25% 10%;
+    --popover-foreground: 220 20% 95%;
+    --primary: 108 52% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 102 45% 56%;
+    --secondary-foreground: 216 28% 7%;
+    --muted: 216 20% 15%;
+    --muted-foreground: 220 15% 60%;
+    --accent: 28 50% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 216 20% 18%;
+    --input: 216 20% 18%;
+    --ring: 108 52% 42%;
+    --sidebar-background: 216 28% 9%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 108 52% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 216 20% 15%;
+    --sidebar-accent-foreground: 220 20% 90%;
+    --sidebar-border: 216 20% 15%;
+    --sidebar-ring: 108 52% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  .font-minecraft {
+    font-family: 'Press Start 2P', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .pixel-border {
+    border-width: 1px;
+    border-style: solid;
+  }
+
+  .pixel-grid-bg {
+    background-image: 
+      linear-gradient(to right, hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}

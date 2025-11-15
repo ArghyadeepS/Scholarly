@@ -1,0 +1,7 @@
+{
+    "login": "https://connect.kingmon.xyz/login",
+    "callback": "https://connect.kingmon.xyz/auth/callback",
+    "user": "https://connect.kingmon.xyz/user",
+    "logout": "https://connect.kingmon.xyz/logout",
+    "localapi": "https://promonopoly-topologically-dione.ngrok-free.dev/"
+}
