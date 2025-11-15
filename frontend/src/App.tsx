@@ -9,10 +9,8 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Chat from "./pages/Chat";
 import OCR from "./pages/OCR";
-import Workflows from "./pages/Workflows";
 import KnowledgeBase from "./pages/KnowledgeBase";
 import Settings from "./pages/Settings";
-import StudyLab from "./pages/StudyLab";
 import NotFound from "./pages/NotFound";
 import { AppLayout } from "./components/AppLayout";
 
@@ -32,8 +30,6 @@ const App = () => (
               <Route index element={<Dashboard />} />
               <Route path="chat" element={<Chat />} />
               <Route path="ocr" element={<OCR />} />
-              <Route path="workflows" element={<Workflows />} />
-              <Route path="study-lab" element={<StudyLab />} />
               <Route path="kb" element={<KnowledgeBase />} />
               <Route path="settings" element={<Settings />} />
             </Route>

@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Home, MessageSquare, ScanText, Route, BookMarked, Settings, LogOut, User, FlaskConical } from "lucide-react";
+import { BookOpen, Home, MessageSquare, ScanText, BookMarked, Settings, LogOut, User } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts/AuthContext";
@@ -39,8 +39,6 @@ export const AppLayout = () => {
     { icon: Home, label: "Home", path: "/app" },
     { icon: MessageSquare, label: "Chat Assistant", path: "/app/chat" },
     { icon: ScanText, label: "OCR & Forms", path: "/app/ocr" },
-    { icon: Route, label: "Workflows", path: "/app/workflows" },
-    { icon: FlaskConical, label: "Study Lab", path: "/app/study-lab" },
     { icon: BookMarked, label: "Knowledge Base", path: "/app/kb" },
     { icon: Settings, label: "Settings", path: "/app/settings" },
   ];
