@@ -1,7 +1,7 @@
 {
-    "login": "https://connect.kingmon.xyz/login",
-    "callback": "https://connect.kingmon.xyz/auth/callback",
-    "user": "https://connect.kingmon.xyz/user",
-    "logout": "https://connect.kingmon.xyz/logout",
+    "login": "https://scholarly-connect.vercel.app/login",
+    "callback": "https://scholarly-connect.vercel.app/auth/callback",
+    "user": "https://scholarly-connect.vercel.app/user",
+    "logout": "https://scholarly-connect.vercel.app/logout",
     "localapi": "https://promonopoly-topologically-dione.ngrok-free.dev/"
 }
